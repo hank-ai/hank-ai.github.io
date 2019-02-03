@@ -1,36 +1,21 @@
+---
+---
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
 
-<title>Hank.ai - Let Hank Help!</title>
-<link rel="icon" type="image/png" href="favicon.png" />
-<style>
-	* {
-		font-family: Arial;
-	}
-	html, body, #wrapper {
-	   height:100%;
-	   width: 100%;
-	   margin: 0;
-	   padding: 0;
-	   border: 0;
-	}
-	#wrapper td {
-	   vertical-align: middle;
-	   text-align: center;
-	}
-</style>
+<head>
+	{% include head.html %}
 </head>
-<table id="wrapper">
-  <tr>
-    <td>
-	<a href='mailto:info@hank.ai'><img src="img/hankai-logo-large.png" alt="" /></a><br>
-	Let Hank Help&trade;
-	</td>
-  </tr>
-</table>
+
+<body>
+	{% include header.html %}
+
+	{% include content.html %}
+
+	{% include footer.html %}
+
+	{% include vendor.js.html %}
+
 </body>
+
 </html>
