@@ -1,0 +1,39 @@
+* {
+  font-family: Arial;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/**
+* FOOTER
+*/
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Set the fixed height of the footer here */
+  line-height: 100px; /* Vertically center the text there */
+  background-color: #646060;
+}
+
+.footer .copyright {
+  color: #DEE2E6;
+}
+
+.footer a {
+  color: #55AAFF;
+}
+
+.container {
+    height: 100%;
+}
+
+/*
+* UTILS
+*/
