@@ -2,6 +2,9 @@
   font-family: Arial;
 }
 
+/**
+* LAYOUT
+**/
 html, body {
   height: 100%;
   width: 100%;
@@ -11,15 +14,36 @@ html, body {
 }
 
 /**
+* COLORS
+**/
+:root {
+  --color-bg-nav: #646060;
+}
+
+/**
+* SIZES
+**/
+:root {
+  --size-h-nav: 50px;
+  --size-h-footer: calc(50px * 2);
+}
+
+/**
+* NAV
+**/
+.navbar {
+  background-color: var(--color-bg-nav);
+  height: var(--size-h-nav);
+}
+
+/**
 * FOOTER
-*/
+**/
 .footer {
-  position: absolute;
+  background-color: var(--color-bg-nav);
   bottom: 0;
-  width: 100%;
-  height: 100px; /* Set the fixed height of the footer here */
-  line-height: 100px; /* Vertically center the text there */
-  background-color: #646060;
+  height: var(--size-h-footer);
+  line-height: var(--size-h-footer);
 }
 
 .footer span {
@@ -28,10 +52,6 @@ html, body {
 
 .footer a {
   color: #55AAFF;
-}
-
-.container {
-    height: 100%;
 }
 
 /*
