@@ -1,0 +1,97 @@
+* {
+  font-family: Arial;
+}
+
+/**
+* LAYOUT
+**/
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-height: 10000px;
+  background: url(img/hankai-logo-large.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed !important;
+  background-size: 400px !important;
+  background-position: center !important;
+}
+
+/**
+* COLORS
+**/
+:root {
+  --color-bg-nav: #646060;
+}
+
+/**
+* SIZES
+**/
+:root {
+  --size-h-nav: 50px;
+  --size-h-footer: calc(50px * 2);
+}
+
+/**
+* NAV
+**/
+.navbar {
+  background-color: var(--color-bg-nav);
+  color: #DDDDDD;
+  height: var(--size-h-nav);
+}
+
+.navbar a {
+  color: #55AAFF;
+}
+
+
+.quote-container {
+  min-height:200px;
+}
+
+.flying-text {
+  position: absolute;
+  height:auto;
+}
+
+.quote-container-about {
+  min-height:100px;
+}
+
+.content-wrapper {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.9) 90%, rgba(255, 255, 255, 0.0));
+}
+
+.blockquote_carousel {
+  font-family: serif;
+}
+
+.blockquote_carousel a {
+  color: var(--color-text-secondary);
+}
+/**
+* FOOTER
+**/
+.footer {
+  background-color: var(--color-bg-nav);
+  bottom: 0;
+  height: var(--size-h-footer);
+  line-height: var(--size-h-footer);
+}
+
+.footer span {
+  color: #DEE2E6;
+}
+
+.footer a {
+  color: #55AAFF;
+}
+
+/*
+* UTILS
+*/
