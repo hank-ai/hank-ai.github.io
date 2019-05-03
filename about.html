@@ -1,0 +1,167 @@
+---
+layout: default
+section_id: about
+
+milestones:
+  - from: 0
+    to: 52
+    title: Years of Machine Learning Experience
+  - from: 0
+    to: 41
+    title: Years of Medical Billing Experience
+
+
+members:
+  - name: Dr. Sergey A. Razin, Ph.D.
+    position: CTO
+    desc:
+      A Professor of Artificial Intelligence and Entrepreneurial Engineering at the Harvard of the South, Sergey has extensive experience in the technology sector ranging from startups to major corporations.
+    avatar: images/sergey.jpg
+    socials:
+      - icon_class: fa fa-linkedin-square
+        url: https://linkedin.com/in/sergeyrazin
+  - name: Dr. Jack Neil, MD
+    position: CEO
+    desc:
+      A board certified pediatric anesthesiologist with a Bachelor's in Computer Information Systems, Jack is a startup veteran with extensive connections in tech, entrepreneurial, and medical circles.
+    avatar: images/jack.jpg
+    socials:
+      - icon_class: fa fa-linkedin-square
+        url: https://linkedin.com/in/jackneil
+  - name: Sam Hartzog
+    position: COS
+    desc:
+      A senior process control systems engineer with a Bachelor’s in Chemical Engineering, Sam is the enterprise expert for industrial machine learning at one of the largest brewers in the US.
+    avatar: images/sam.jpg
+    socials:
+      - icon_class: fa fa-linkedin-square
+        url: https://linkedin.com/in/samuelhartzog
+  - name: Kenneth Ellington, MD
+    position: Board Member
+    desc:
+      32 years of leadership experience in healthcare. Currently, Founder and President of MedStream, constituting over 400 anesthesia providers covering over 50 hospitals throughout the United States.
+    avatar: images/kenordoug.jpg
+    socials:
+      - icon_class: fa fa-link
+        url: https://medstreamsolutions.com/leadership
+
+clients:
+  - name: Travis Goldie
+    pic: images/travis.jpg
+    url: http://beeryardtech.github.io
+    icon_class: fa fa-github
+    position: User Interface and Experience
+  - name: Hasani X
+    pic: images/hasani.jpg
+    url: http://beeryardtech.github.io
+    icon_class: fa fa-github
+    position: Branding and Marketing
+  - name: Tracy Marlatt
+    pic: images/tracy.jpg
+    url: http://beeryardtech.github.io
+    icon_class: fa fa-github
+    position: Data Operations
+  - name: Scott Thoman
+    pic: images/scott.jpg
+    url: http://beeryardtech.github.io
+    icon_class: fa fa-github
+    position: Servers and Integration
+
+---
+
+<div class='full'>
+  <div class='row'>
+    <div class='large-6 columns'>
+      <h4 style='color: #999'>We are proud of...</h4>
+      <h2>Our team</h2>
+      <div class='spacing'></div>
+      <p>Our nine-person founding team constitutes over 50 years of machine learning experience and over 40 years of medical billing experience. We are currently in the development phase of production and are on track to deliver a functional MVP for the anesthesia medical coding industry this summer. </p>
+    </div>
+    <div class='spacing two'></div>
+    {% for milestone in page.milestones %}
+      <div class='medium-3 large-3 columns right-border left-border' style='padding-top: 15px;'>
+        <div class='mod modMilestone no-icon'>
+          <strong data-from='{{milestone.from}}' data-to='{{milestone.to}}'>&nbsp;</strong>
+          <span>{{milestone.title}}</span>
+          <div class='spacing'></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class='three spacing'></div>
+</div>
+<img src='images/whitewedgeleft.png' style="position: absolute; width: 100%; height: 74px; overflow: hidden; padding-top: -50px;" />
+
+<div class='full' style='background: #f5f5f5'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <h3>Our Founders</h3>
+      <div class='spacing'></div>
+    </div>
+  </div>
+  <div class='row'>
+    {% for member in page.members %}
+      <div class='small-6 medium-3 large-3 columns'>
+        <div class='mod modTeamMember style-2' >
+          <div class='member'>
+            <img class="avatar" alt="" src="{{site.url}}/{{member.avatar}}" />
+            <div class='overlay'>
+              <ul class='socials'>
+                {% for social in member.socials %}
+                  <li>
+                    <a href='{{social.url}}'>
+                      <i class='{{social.icon_class}}'></i>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <h3>{{member.name}}</h3>
+          <p class='position'>{{member.position}}</p>
+          <p>{{member.desc}}</p>
+          <div class='two spacing'></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class='three spacing'></div>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <h3>Our Developers</h3>
+      <div class='spacing'></div>
+    </div>
+  </div>
+</div>
+
+<div class='full parallax' style='background-image: url(../images/key.jpg); color: #fff;'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <div class='mod modClients' data-slides_to_show='3'>
+        <div class='clients'>
+          {% for client in page.clients %}
+            <div class='mod modTeamMember style-2' style='padding: 5px;' >
+              <div class='member'>
+                <img class="avatar" alt="" src="{{site.url}}/{{client.pic}}" />
+                <div class='overlay'>
+                  <ul class='socials'>
+                      <li>
+                        <!--a href='{{client.url}}'>
+                          <i class='{{client.icon_class}}'></i>
+                        </a-->
+                        <h3>{{client.name}}</h3>
+                        <h5>{{client.position}}</h5>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      <div class='two spacing'></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='four spacing'></div>
+<div class='four spacing'></div>
