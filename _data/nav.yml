@@ -1,9 +1,3 @@
-- name: Cognitive Automation for Healthcare
-  path: index.html
-  section_id: slogan
-- name:
-  path: index.html
-  section_id:
 - name: Home
   path: index.html
   section_id: home
@@ -13,6 +7,9 @@
 - name: FAQ
   path: FAQ.html
   section_id: FAQ
+- name: Pricing
+  path: pricing.html
+  section_id: pricing
 - name: Sign Up
   path: signup.html
   section_id: signup

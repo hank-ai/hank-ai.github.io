@@ -35,9 +35,13 @@
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <noscript>
+  <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.html">
+  </noscript>
 </head>
 <style>
 .mytitle,
+.wftitle,
 h1,
 h2,
 h3,
@@ -47,21 +51,19 @@ h6 {
  font-family: "sofia-pro","Roboto","Helvetica","Arial",sans-serif;
   font-weight: 600;
  color:#000 !important;
-
  line-height: 1.1 !important;
 }
 
 .header-text {
 color: #454545 !important;
-font-weight: 500 !important;
 line-height: 1.44444444;
 letter-spacing: -.2px !important;
-font-size: 17pt !important;
 max-width: 400px;
 }
 
 .main-title, .main-text {text-align: center;}
-.main-title {font-size: 50px !important; font-weight: 600; line-height:1.0!important; }.main-text {font-size: 15pt !important; font-weight: 400;}
+.main-title {font-size: 50px; font-weight: 600; line-height:1.0!important; }
+.main-text {font-size: 15pt; font-weight: 400;}
 
 
 .header-bg {"background-image: url('header.jpg');background-position: top right;background-size: cover;"}
@@ -92,7 +94,7 @@ max-width: 400px;
 
 .box-title {font-weight: 600; font-size: 18px !important; padding-bottom: 12px}
 
-body, p {color: #454545 !important; font-size: 17px !important; line-height: 1.42 !important; font-weight: 500 !important;}
+body, p {color: #454545 !important; line-height: 1.42 !important; font-weight: 500 !important;}
 
 /* Added to Title Rows */
 .max-width-1000px {max-width:1000px; padding-bottom: 70px;}
