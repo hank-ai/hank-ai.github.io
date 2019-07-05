@@ -14,37 +14,42 @@ section_id: FAQ
       <div class='spacing'></div>
       <h4 style='color: #000'>What is cognitive automation?</h4>
       <p>
-        Cognitive automation is an emerging form of augmented artificial intelligence that seeks to replicate human decision-making processes by combining traditional retrospective machine learning techniques with alternate forms of knowledge capture like natural language processing.
+        Cognitive automation is an emerging form of augmented artificial intelligence that seeks to replicate human decision-making processes by combining traditional machine learning with more advanced techniques like natural language understanding, reinforcement learning, and collective intelligence.
       </p>
       <div class='spacing'></div>
       <h4 style='color: #000'>What does Hank do?</h4>
       <p>
-        Hank helps medical coders increase their productivity and accuracy by transforming free text medical records into a list of the most probable medical codes.
+        Hank helps medical coders increase their productivity and accuracy by providing an easy to use interface for manual keyword searches against our database of medical <a class='codedispbtn dispbtn'>codes</a> (free) and transforming free text medical records into a list of the most probable <a class='codedispbtn dispbtn'>codes</a> (trainer or paid).
       </p>
       <div class='spacing'></div>
       <h4 style='color: #000'>How does Hank work?</h4>
       <p>
-        Medical coders submit records to Hank.  Hank sends them to his secure servers for processing and returns a list of probable codes along with the free text contained in the record.
+        Hank's basic interface is a side panel which offers coders a fast keyword search - returning relevant <a class='codedispbtn dispbtn'>codes</a> and guidance. Hank's advanced interface allows coders to submit ENTIRE RECORDS to Hank. Hank sends them to his secure servers for processing and returns a list of probable <a class='codedispbtn dispbtn'>codes</a> along with an annotated copy of the free text contained in the record. Coders select a probable <a class='codedispbtn dispbtn'>code</a> and Hank highlights the words (or values) in the record that provide support for that <a class='codedispbtn dispbtn'>code</a>.
       </p>
       <div class='spacing'></div>
-      <h4 style='color: #000'>How do I use Hank?</h4>
+      <h4 style='color: #000'>How does Hank's advanced interface deal with protected health information?</h4>
       <p>
-        Select the standard print function in your EMR system and choose the preinstalled Hank printer to submit the record.  When processing is complete, a list of codes along with the processed text will appear in Hank’s user interface.
+        First, Hank strips <a class='phidispbtn dispbtn'>easily identifiable PHI</a> from the record on the client side (i.e. on your local computer) before sending it to his server for processing.  This goes a long way toward removing the majority of the protected information, but advances in big data processing are making it easier for companies to identify a specific person from less and less data.  With that in mind, advanced users will also need to sign an agreement with Hank stating that limited protected health information may be processed remotely on secure, HIPAA compliant servers.
       </p>
       <div class='spacing'></div>
-      <h4 style='color: #000' >How does Hank help me code medical records?</h4>
+      <h4 style='color: #000'>How do I use Hank's advanced interface?</h4>
       <p>
-        Hank doesn’t just return a list of suggested codes.  He also highlights the text inside the record that led him to each conclusion, so you can jump straight to the sections that are most relevant to selecting the right codes.
+        Select the standard print function in your EMR system and choose the preinstalled Hank printer to submit the record, or simply copy the text of the record and paste it into Hank's input field.  When processing is complete, a list of <a class='codedispbtn dispbtn'>codes</a> along with the processed text will appear in Hank’s user interface.
       </p>
       <div class='spacing'></div>
-      <h4 style='color: #000' id='contribute'>Is Hank Computer Assisted Coding (CAC) software?</h4>
+      <!--h4 style='color: #000' >How does Hank help me code medical records?</h4>
       <p>
-        Yes. And no. Hank is similar to traditional CAC software - with one key difference. Hank elicits feedback and explanations from his users in order to improve continuously. And he will pay you for this expertise. Not only does Hank assist with medical coding, he pays you to teach him how to assist you better! Hank's back end is also capable of being deployed in conjunction with other software platforms to perform verification and auditing tasks that were once performed by humans.
+        Hank's basic interface functions as an intelligent reference allowing his users to find the right <a class='codedispbtn dispbtn'>codes</a> faster.  For his advanced users, Hank returns more than just a list of suggested <a class='codedispbtn dispbtn'>codes</a>.  He also highlights the text inside the record that led him to each conclusion, so you can jump straight to the sections that are most relevant to selecting the right <a class='codedispbtn dispbtn'>codes</a>.
+      </p>
+      <div class='spacing'></div-->
+      <h4 style='color: #000'>Is Hank Computer Assisted Coding (CAC) software?</h4>
+      <p>
+        Yes. And no. Hank is similar to traditional CAC software - with one key difference. Hank elicits feedback and explanations from his users in order to improve continuously. And he will pay you for this expertise. Not only does Hank assist with medical coding, he pays you to teach him how to assist you better! Hank's back end is also capable of being deployed in conjunction with other software platforms to automate verification, missed-claim capture, and auditing tasks which have traditionally been too cost prohibitive for humans to perform at scale.
       </p>
       <div class='spacing'></div>
       <h4 style='color: #000' >How will I provide feedback to Hank?</h4>
       <p>
-        Your feedback will be in the form of a free text explanation, but you will be provided with a few standard phrases to use when correcting codes to ensure Hank understands what he got wrong.  Your adherence to our suggested phrasing will be a part of how your feedback is rated.
+        In the basic interface, simply select the correct <a class='codedispbtn dispbtn'>code</a> from the returned list or input the correct <a class='codedispbtn dispbtn'>code</a> if it wasn't returned.  For trainers using Hank's advanced interface, feedback will be in the form of a free text explanation, but you will be provided with a few standard phrases to use when correcting <a class='codedispbtn dispbtn'>codes</a> to ensure Hank understands what he got wrong.  Your adherence to our suggested phrasing will be a part of how your feedback is rated.
       </p>
       <div class='spacing'></div>
       <h4 style='color: #000' id='contribute'>Why is Hank paying medical coders to help him learn?</h4>
@@ -52,9 +57,9 @@ section_id: FAQ
         Hank doesn’t know everything. He needs help. He needs to learn from a wide variety of experts in order to become an expert himself. Knowledge acquisition isn’t cheap. Ask any recent college graduate! With this in mind, Hank understands the value of medical coders’ expertise and is excited to reward them with financial incentives for helping him learn their specialty.
       </p>
       <div class='spacing'></div>
-      <h4 style='color: #000' >What are the 'content contribution requirements' for becoming a contributing user?</h4>
+      <h4 style='color: #000' >What are the 'content contribution requirements' for becoming a trainer?</h4>
       <p>
-        Simply provide quality feedback to Hank when the codes he suggests aren't ideal.  In addition, Hank may store a portion of the records you've submitted in a fully deidentified format for future internal training purposes.
+        Simply provide quality feedback to Hank when the <a class='codedispbtn dispbtn'>codes</a> he suggests aren't ideal.  In addition, Hank will briefly retain a list of the features that he deemed relevant to selecting the correct code alongside your feedback.  As soon as he has completed the processing required to incorporate your insights into his future decisions, this additional information will be permanently deleted.
       </p>
       <div class='spacing'></div>
       <h4 style='color: #000' >Is Hank HIPAA compliant?</h4>
@@ -64,18 +69,18 @@ section_id: FAQ
       <div class='spacing'></div>
       <h4 style='color: #000' >How do I install Hank?</h4>
       <p>
-        Very easily.  Just <a href="signup.html">download</a> and run Hank's install file.
+        Very easily.  Just <a class='signupbtn'>download</a> and run Hank's install file.
       </p>
       <div class='spacing'></div>
       <h4 style='color: #000' >What are the system requirements to install Hank?</h4>
       <p>
         Hank requires very little resources and can be installed on any modern operating system.
       </p>
-      <div class='spacing'></div>
+      <!--div class='spacing'></div>
       <h4 style='color: #000' >Can I install Hank even if I'm not an administrator?</h4>
       <p>
         Yes.  Hank was built to be light weight and should not require administrator access to install.
-      </p>
+      </p-->
       <div class='spacing'></div>
       <h4 style='color: #000' >Why does the world need Hank?</h4>
       <p>

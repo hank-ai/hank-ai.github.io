@@ -10,6 +10,3 @@
 - name: Pricing
   path: pricing.html
   section_id: pricing
-- name: Sign Up
-  path: signup.html
-  section_id: signup

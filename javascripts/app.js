@@ -33,6 +33,13 @@ jQuery.extend({
     var theadhgt = thgt - 9
     if (theadhgt > 17) {theadhgt = 17}
     $(".header-text").css("font-size",theadhgt + "px");
+    if (theadhgt < 12) {
+      $(".pricing-text").css("font-size","12px");
+    } else if (theadhgt > 15){
+      $(".pricing-text").css("font-size","15px");
+    } else {
+      $(".pricing-text").css("font-size",theadhgt + "px");
+    }
     $(".main-text").css("font-size",theadhgt + "px");
     var twfhgt = thgt
     if (twfhgt > 30) {twfhgt = 30}
@@ -40,7 +47,7 @@ jQuery.extend({
     $(".wfpic").css("width",wfwidth + "px");
     $(".wfpic").css("height",wfhgt + "px");
     //$(".mytitle").css("margin-top","-10%");
-    var margadj = 0;
+    var margadj = 50;
     if (width < 480) {
       margadj = (hgt/1.6)
       //$(".mybtn").css("max-height","12px");
@@ -48,57 +55,44 @@ jQuery.extend({
       $(".mybtn").css("margin-top","5px");
       $(".mybtn").css("padding","5px");
       $(".mybtn").css("font-size",theadhgt + "px");
-      $("#btnspacing").removeClass("spacing");
-      $("#btnspacing1").removeClass("spacing");
-      $("#btnspacing2").removeClass("spacing");
-      $("#footer").css("height","500px");
+      $("#footer").css("height","510px");
       $(".memberdesc").css("min-height","225px");
       $(".membername").css("min-height","30px");
-    } else if (width < 520) {
+      $(".btnspacing").removeClass("spacing");
+    } else if (width < 540) {
       margadj = (hgt/1.8)
       $(".header-text").css("max-width","46%");
       $(".mybtn").removeAttr("style");
-      $("#btnspacing2").removeClass("spacing");
-      $("#btnspacing1").addClass("spacing");
-      $("#btnspacing").addClass("spacing");
-      $("#footer").css("height","500px");
+      $(".btnspacing").removeClass("spacing");
+      $("#footer").css("height","510px");
       $(".memberdesc").css("min-height","175px");
       $(".membername").css("min-height","0px");
     } else if (width < 630) {
       margadj = (hgt/2.1)
       $(".header-text").css("max-width","46%");
       $(".mybtn").removeAttr("style");
-      $("#btnspacing2").addClass("spacing");
-      $("#btnspacing1").addClass("spacing");
-      $("#btnspacing").addClass("spacing");
-      $("#footer").css("height","500px");
+      $(".btnspacing").addClass("spacing");
+      $("#footer").css("height","510px");
       $(".memberdesc").css("min-height","150px");
       $(".membername").css("min-height","0px");
     } else if (width < 800) {
       margadj = (hgt/2.6)
       $(".header-text").css("max-width","46%");
       $(".mybtn").removeAttr("style");
-      $("#btnspacing2").addClass("spacing");
-      $("#btnspacing1").addClass("spacing");
-      $("#btnspacing").addClass("spacing");
-      $("#footer").css("height","500px");
+      $(".btnspacing").addClass("spacing");
+      $("#footer").css("height","510px");
       $(".memberdesc").css("min-height","100px");
       $(".membername").css("min-height","0px");
-      $(".header-text").css("max-width","60%");
     } else if (width > 1300) {
       $(".mybtn").removeAttr("style");
-      $("#btnspacing2").addClass("spacing");
-      $("#btnspacing1").addClass("spacing");
-      $("#btnspacing").addClass("spacing");
-      $("#footer").css("height","500px");
+      $(".btnspacing").addClass("spacing");
+      $("#footer").css("height","510px");
       $(".memberdesc").css("min-height","0px");
       $(".membername").css("min-height","0px");
     } else {
       $(".header-text").css("max-width","60%");
       $(".mybtn").removeAttr("style");
-      $("#btnspacing2").addClass("spacing");
-      $("#btnspacing1").addClass("spacing");
-      $("#btnspacing").addClass("spacing");
+      $(".btnspacing").addClass("spacing");
       $("#footer").css("height","400px");
       $(".memberdesc").css("min-height","0px");
       $(".membername").css("min-height","0px");
@@ -136,6 +130,7 @@ jQuery.extend({
 jQuery(document).ready(function() {
   jQuery('html').removeClass('no-js');
   jQuery.responsiveresize();
+  jQuery('.loading').hide();
 });
 
 jQuery(document).foundation();
@@ -147,6 +142,158 @@ jQuery(document).foundation();
     $('video').each(function() {
       this.muted = true;
     });
+    var srcform = '#myModal'
+    var srcemail = '#signupemail'
+    $('.signupbtn').click(function() {
+      $('#myModal').css("display","block")
+      srcform = '#myModal'
+      srcemail = '#downloademail'
+    });
+
+    $('#signuppaid').click(function() {
+      $('#signModal').css("display","block")
+      srcform = '#signModal'
+      srcemail = '#signupemail'
+    });
+
+    $('.codedispbtn').click(function(e) {
+      $('#codepop').css("top",(e.pageY - $(document).scrollTop()) + "px")
+      $('#codepop').css("left",(e.pageX - 100) + "px")
+      $('#phipop').css("display","none")
+      $('#codepop').css("display","block")
+    });
+
+    $('.phidispbtn').click(function(e) {
+      $('#phipop').css("top",(e.pageY - $(document).scrollTop()) + "px")
+      $('#phipop').css("left",(e.pageX - 100) + "px")
+      $('#codepop').css("display","none")
+      $('#phipop').css("display","block")
+    });
+
+    $('.closebtn').click(function() {
+      $('.modal').css("display","none")
+      $('.popbox').css("display","none")
+    });
+
+    $('.againbtn').click(function() {
+      $(srcform).css("display","block")
+      $('#errModal').css("display","none")
+      $('#thanksModal').css("display","none")
+      $('#badModal').css("display","none")
+    });
+
+    $('.close').click(function() {
+      $('.modal').css("display","none")
+      $('.popbox').css("display","none")
+    });
+
+    var myTimeout;
+    var waitingForTimeout = false;
+    $('.submitbtn').click(function() {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($(srcemail).val())) {
+        dataLayer.push({'event' : 'logemail' , 'userEmail' : $(srcemail).val(), 'signupType' : srcemail})
+        var data = {
+          "auth": {
+            "server": 'smtp.mailgun.org',
+            "username": "signup@we.are.hank.ai",
+            "password": "password111",
+            "port": "25",
+            'tls': true
+          },
+          "message": {
+              "from": "GTM SIGNUP <signup@we.are.hank.ai>",
+              "to": "NEW USER - HANK.AI <newuser@hank.ai>, Sam Hartzog <sam.hartzog@hank.ai>",
+              "body": "SignupType=" + srcemail +
+                    "<br>Email=" + $(srcemail).val() +
+                    "<br>Page URL=" + $(location).attr('href'),
+              "subject": "[NEW USER="+$(srcemail).val()+"] Hank.ai"
+          },
+            "async":true
+        };
+        $('.loading').show();
+        waitingForTimeout = true;
+        myTimeout = setTimeout(function () {
+          $('.loading').hide()
+          $('#errModal').css("display","block")
+          $('#downloademail').val('')
+          $('#signupemail').val('')
+          waitingForTimeout = false;
+        },15000)
+        jQuery.ajax({
+          type: "GET",
+          url: "https://www.jackmd.com/apis/mail.php",
+          jsonp: "callback",
+          dataType: "jsonp",
+          data: data,
+          error: function(d) {
+            console.log('ERROR: ', d);
+            clearTimeout(myTimeout);
+            $('.loading').hide();
+            if (waitingForTimeout) {$('#errModal').css("display","block")}
+            $('#downloademail').val('')
+            $('#signupemail').val('')
+            waitingForTimeout = false;
+          },
+          success: function(d){
+            //console.log('AJAX Query Complete. Response: ', d);
+            var getUrl = window.location;
+            var data = {
+              "auth": {
+                "server": 'smtp.mailgun.org',
+                "username": "signup@we.are.hank.ai",
+                "password": "password111",
+                "port": "25",
+                'tls': true
+              },
+              "message": {
+                  "from": "Hank <signup@we.are.hank.ai>",
+                  "to": $(srcemail).val(),
+                  "body": "<div style='text-align: center; width: 100%;'><a href='https://hank.ai'><img src='https://" + getUrl.host + "/images/hank.png' style='width:60px;height:60px;margin:auto;'/></a>" +
+                        "<br>Welcome to the team!  I'll be in contact with details on how to get started...<br><br>Cheers!<br>Hank" +
+                        "<br><br><br>P.S. - If you have a minute, please take my <a href='https://form.responster.com/wVWg9e?email=" + $(srcemail).val() + "'>survey</a> to allow me get to know you better.</div>",
+                  "subject": "Welcome from Hank!"
+              },
+                "async":true
+            };
+            jQuery.ajax({
+              type: "GET",
+              url: "https://www.jackmd.com/apis/mail.php",
+              jsonp: "callback",
+              dataType: "jsonp",
+              data: data,
+              error: function(d) {
+                console.log('ERROR: ', d);
+                clearTimeout(myTimeout);
+                $('.loading').hide();
+                if (waitingForTimeout) {$('#errModal').css("display","block")}
+                $('#downloademail').val('')
+                $('#signupemail').val('')
+                waitingForTimeout = false;
+              },
+              success: function(d){
+                //console.log('AJAX Query Complete. Response: ', d);
+                clearTimeout(myTimeout);
+                $('.loading').hide();
+                $('#thanksemailtxt').text('Thanks for signing up!  A welcome email has been sent to ' + $(srcemail).val() + '.  We will be in touch with details on how to get started.')
+                if (waitingForTimeout) {$('#thanksModal').css("display","block")}
+                waitingForTimeout = false;
+                $('#downloademail').val('')
+                $('#signupemail').val('')
+              }
+            })
+          },
+        })
+
+        $('#badModal').css("display","none")
+      } else {
+        $('#errModal').css("display","none")
+        $('#thanksModal').css("display","none")
+        $('#badModal').css("display","block")
+      }
+      $('#myModal').css("display","none")
+      $('#signModal').css("display","none")
+    });
+
 
     $('.fadeinleft, .fadeinright, .fadein, .popin').appear(function() {
       var delay = $(this).data('delay');
@@ -163,6 +310,7 @@ jQuery(document).foundation();
     // });
 
     $(window).scroll(function() {
+      $('.popbox').css("display","none")
 
       var scroll = $(window).scrollTop();
 

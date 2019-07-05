@@ -33,7 +33,7 @@ slides:
             <div class='row'>
               <div class='{{slide.title.class}} columns'>
                 <div class='mytitle'>{{slide.title.text}}</div>
-                <div class='spacing'></div>
+                <div class='btnspacing spacing'></div>
                 {% for info in slide.infos %}
                 <div class="header-text">{{info.text}}</div>
                 {% endfor %}
@@ -44,9 +44,9 @@ slides:
           <div class='buttons-wrapper {{slide.buttons.animation}}' style=''>
             <div class='row'>
               <div class='{{slide.buttons.class}} columns'>
-                <div id='btnspacing' class='spacing'></div>
+                <div class='btnspacing spacing'></div>
                 {% for button in slide.buttons.items %}
-                  <a class='button mybtn' href='{{button.url}}'>{{button.text}}</a>
+                  <a class='button mybtn signupbtn'>{{button.text}}</a>
                 {% endfor %}
               </div>
             </div>
@@ -57,7 +57,7 @@ slides:
   </div>
 </div>
 
-<div class="full fadein"  id="helphank" style='overflow: hidden; margin-top: -30px;'>
+<div class="full fadein"  id="helphank" style='overflow: hidden; margin-top: -30px; margin-left: -25px;'>
   <div class="row max-width-1000px" style="margin-top: 0px;">
     <div class="small-12 columns">
       <h1 class="main-title"><span style="color:#f9b052;">Grow</span> With Hank</h1>
@@ -172,11 +172,11 @@ slides:
       <p class="main-text" style="color:#fff !important;">
         Profit Sharing Options Available.</p>
 
-      <div id='btnspacing1' class="spacing"></div>
-      <div id='btnspacing2' class="spacing"></div>
+      <div class='btnspacing spacing'></div>
+      <div class='btnspacing spacing'></div>
       <div class="box" style="text-align: center; width: 100%; ">
 
-        <a class="button mybtn" href="signup.html">Download Hank</a>
+        <a class="button mybtn signupbtn">Download Hank</a>
       </div>
       </div>
     <div class="small-1 columns"><p></p></div>
