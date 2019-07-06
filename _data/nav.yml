@@ -1,12 +1,12 @@
 - name: Home
-  path: index.html
+  path: ./index.html
   section_id: home
 - name: About
-  path: about.html
+  path: ./about.html
   section_id: about
 - name: FAQ
-  path: FAQ.html
+  path: ./FAQ.html
   section_id: FAQ
 - name: Pricing
-  path: pricing.html
+  path: ./pricing.html
   section_id: pricing
