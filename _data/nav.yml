@@ -7,6 +7,4 @@
 - name: FAQ
   path: FAQ.html
   section_id: FAQ
-- name: Pricing
-  path: pricing.html
-  section_id: pricing
+
